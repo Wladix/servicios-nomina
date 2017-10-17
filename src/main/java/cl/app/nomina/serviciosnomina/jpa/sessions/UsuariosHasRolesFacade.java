@@ -1,0 +1,32 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cl.app.nomina.serviciosnomina.jpa.sessions;
+
+import cl.app.nomina.serviciosnomina.jpa.entities.UsuariosHasRoles;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+/**
+ *
+ * @author Resorte
+ */
+@Stateless
+public class UsuariosHasRolesFacade extends AbstractFacade<UsuariosHasRoles> {
+
+    @PersistenceContext(unitName = "cl.app.nomina_ServiciosNomina_war_1.0PU")
+    private EntityManager em;
+
+    @Override
+    protected EntityManager getEntityManager() {
+        return em;
+    }
+
+    public UsuariosHasRolesFacade() {
+        super(UsuariosHasRoles.class);
+    }
+    
+}
